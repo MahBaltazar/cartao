@@ -1,0 +1,1700 @@
+/* ==========================================================
+   MARCELLA • FLOR DE CETIM
+   Cartão de contato profissional
+========================================================== */
+
+
+/* ==========================================================
+   1. VARIÁVEIS
+========================================================== */
+
+:root {
+
+    --roxo-escuro: hsl(270, 36%, 10%);
+    --roxo-profundo: hsl(270, 34%, 15%);
+    --roxo-medio: hsl(270, 31%, 25%);
+    --roxo-claro: hsl(270, 32%, 38%);
+
+    --lilas: hsl(273, 47%, 76%);
+    --lilas-claro: hsl(273, 45%, 88%);
+
+    --dourado: #d2ae65;
+    --dourado-claro: #ecd394;
+
+    --branco: #fbf8fc;
+    --texto-suave: #d9cde0;
+
+    --fonte-titulo: "Cormorant Garamond", Georgia, serif;
+    --fonte-texto: "Montserrat", Arial, sans-serif;
+
+}
+
+
+/* ==========================================================
+   2. RESET
+========================================================== */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 20px;
+
+    color: var(--branco);
+
+    font-family: var(--fonte-texto);
+
+
+    /* ======================================================
+       REQUISITO:
+       VARIAÇÕES DE UMA COR UTILIZANDO HSL
+    ====================================================== */
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            hsl(270, 35%, 24%),
+            transparent 33%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            hsl(255, 33%, 20%),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            145deg,
+            hsl(270, 38%, 8%),
+            hsl(270, 35%, 12%)
+        );
+
+}
+
+
+
+/* ==========================================================
+   3. PÁGINA
+========================================================== */
+
+.pagina {
+
+    width: 100%;
+
+    max-width: 650px;
+
+}
+
+
+
+/* ==========================================================
+   4. CARTÃO
+========================================================== */
+
+.cartao {
+
+    position: relative;
+
+    isolation: isolate;
+
+    overflow: hidden;
+
+    width: 100%;
+
+    padding: 55px 58px 32px;
+
+    border-radius: 36px;
+
+
+    /* ======================================================
+       REQUISITO:
+       FUNDO COM RGBA + TRANSPARÊNCIA
+    ====================================================== */
+
+    background: rgba(49, 29, 63, 0.88);
+
+
+    border: 1px solid rgba(218, 180, 101, 0.52);
+
+
+    box-shadow:
+
+        0 45px 100px rgba(0, 0, 0, 0.48),
+
+        0 15px 35px rgba(0, 0, 0, 0.25),
+
+        inset 0 0 50px rgba(255, 255, 255, 0.02);
+
+
+    backdrop-filter: blur(16px);
+
+}
+
+
+
+/* Segunda moldura */
+
+.cartao::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 11px;
+
+    border-radius: 28px;
+
+    border: 1px solid rgba(218, 180, 101, 0.14);
+
+    pointer-events: none;
+
+}
+
+
+
+/* Pequena linha dourada superior */
+
+.cartao::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 11px;
+
+    left: 50%;
+
+    width: 140px;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--dourado),
+            transparent
+        );
+
+}
+
+
+
+/* ==========================================================
+   5. BRILHOS
+========================================================== */
+
+.brilho {
+
+    position: absolute;
+
+    z-index: -1;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+
+}
+
+
+.brilho-1 {
+
+    top: -120px;
+    left: -140px;
+
+    background: hsl(280, 65%, 65%);
+
+    opacity: 0.16;
+
+}
+
+
+.brilho-2 {
+
+    right: -150px;
+    bottom: 80px;
+
+    background: hsl(245, 55%, 58%);
+
+    opacity: 0.12;
+
+}
+
+
+
+/* ==========================================================
+   6. ANÉIS DECORATIVOS
+========================================================== */
+
+.anel {
+
+    position: absolute;
+
+    z-index: -1;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(218, 180, 101, 0.10);
+
+}
+
+
+.anel-1 {
+
+    width: 260px;
+    height: 260px;
+
+    left: -190px;
+    top: 300px;
+
+}
+
+
+.anel-2 {
+
+    width: 350px;
+    height: 350px;
+
+    right: -270px;
+    top: 90px;
+
+}
+
+
+
+/* ==========================================================
+   7. ESTRELAS
+========================================================== */
+
+.estrela {
+
+    position: absolute;
+
+    color: var(--dourado);
+
+    opacity: 0.45;
+
+    animation: cintilar 3.5s ease-in-out infinite;
+
+}
+
+
+.estrela-1 {
+
+    top: 60px;
+    left: 55px;
+
+}
+
+
+.estrela-2 {
+
+    top: 150px;
+    right: 50px;
+
+    animation-delay: 1s;
+
+}
+
+
+.estrela-3 {
+
+    left: 40px;
+    bottom: 170px;
+
+    font-size: 10px;
+
+    animation-delay: 2s;
+
+}
+
+
+@keyframes cintilar {
+
+    0%,
+    100% {
+
+        opacity: 0.25;
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        opacity: 0.85;
+
+        transform: scale(1.18);
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   8. CABEÇALHO
+========================================================== */
+
+.cabecalho {
+
+    text-align: center;
+
+}
+
+
+
+/* ==========================================================
+   9. MONOGRAMA
+========================================================== */
+
+.monograma {
+
+    width: 50px;
+    height: 50px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(218, 180, 101, 0.75);
+
+    color: var(--dourado-claro);
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 1.65rem;
+
+    font-style: italic;
+
+}
+
+
+.monograma::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 4px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(218, 180, 101, 0.17);
+
+}
+
+
+
+/* ==========================================================
+   10. MARCA
+========================================================== */
+
+.sobretitulo {
+
+    margin-bottom: 8px;
+
+    color: var(--dourado);
+
+    font-size: 0.6rem;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+}
+
+
+.nome-marca {
+
+    /* REQUISITO: nome grande e centralizado */
+
+    text-align: center;
+
+    color: var(--branco);
+
+    font-family: var(--fonte-titulo);
+
+    font-size: clamp(4rem, 12vw, 6rem);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    letter-spacing: -3px;
+
+}
+
+
+.subtitulo-marca {
+
+    margin-top: 7px;
+
+    color: var(--lilas);
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 1.75rem;
+
+    font-style: italic;
+
+}
+
+
+
+/* ==========================================================
+   11. ORNAMENTO
+========================================================== */
+
+.ornamento {
+
+    max-width: 240px;
+
+    margin: 23px auto 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 11px;
+
+}
+
+
+.linha {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--dourado)
+        );
+
+}
+
+
+.linha:last-child {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--dourado),
+            transparent
+        );
+
+}
+
+
+.losango {
+
+    width: 7px;
+    height: 7px;
+
+    background: var(--dourado);
+
+    transform: rotate(45deg);
+
+}
+
+
+
+/* ==========================================================
+   12. FRASE
+========================================================== */
+
+.frase-marca {
+
+    max-width: 350px;
+
+    margin: auto;
+
+    color: rgba(255, 255, 255, 0.66);
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 1.15rem;
+
+    line-height: 1.5;
+
+}
+
+
+.frase-marca em {
+
+    color: var(--dourado-claro);
+
+}
+
+
+
+/* ==========================================================
+   13. GALERIA — DOIS CÍRCULOS
+========================================================== */
+
+.galeria {
+
+    position: relative;
+
+    height: 285px;
+
+    max-width: 500px;
+
+    margin: 30px auto 8px;
+
+}
+
+
+
+/* ==========================================================
+   FOTOS
+========================================================== */
+
+.foto {
+
+    position: absolute;
+
+    margin: 0;
+
+    border-radius: 50%;
+
+    transition:
+
+        transform 0.4s ease,
+
+        filter 0.4s ease;
+
+}
+
+
+
+/* CÍRCULO PRINCIPAL */
+
+.foto-principal {
+
+    width: 225px;
+    height: 225px;
+
+    left: 12%;
+    top: 5px;
+
+    z-index: 2;
+
+}
+
+
+
+/* CÍRCULO SECUNDÁRIO */
+
+.foto-secundaria {
+
+    width: 170px;
+    height: 170px;
+
+    right: 8%;
+    bottom: 8px;
+
+    z-index: 3;
+
+}
+
+
+
+/* ==========================================================
+   MOLDURA DOURADA DAS FOTOS
+========================================================== */
+
+.moldura-foto {
+
+    width: 100%;
+    height: 100%;
+
+    padding: 6px;
+
+    border-radius: 50%;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #f0d58f,
+            #a77a30 35%,
+            #ecd18b 65%,
+            #8f6526
+        );
+
+
+    box-shadow:
+
+        0 20px 38px rgba(0, 0, 0, 0.35),
+
+        0 0 0 5px rgba(255, 255, 255, 0.035),
+
+        0 0 25px rgba(218, 180, 101, 0.10);
+
+}
+
+
+
+/* ==========================================================
+   REQUISITO:
+   IMAGENS CIRCULARES
+========================================================== */
+
+.moldura-foto img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 4px solid var(--roxo-profundo);
+
+}
+
+
+
+/* ==========================================================
+   NÚMEROS DAS FOTOS
+========================================================== */
+
+.numero-foto {
+
+    position: absolute;
+
+    width: 31px;
+    height: 31px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: var(--dourado);
+
+    color: var(--roxo-escuro);
+
+    font-size: 0.55rem;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+}
+
+
+.foto-principal .numero-foto {
+
+    left: 5px;
+    bottom: 24px;
+
+}
+
+
+.foto-secundaria .numero-foto {
+
+    right: 3px;
+    top: 18px;
+
+}
+
+
+
+/* ==========================================================
+   HOVER DAS FOTOS
+========================================================== */
+
+.foto-principal:hover {
+
+    transform:
+
+        translateY(-8px)
+
+        rotate(-2deg)
+
+        scale(1.035);
+
+}
+
+
+.foto-secundaria:hover {
+
+    transform:
+
+        translateY(-8px)
+
+        rotate(3deg)
+
+        scale(1.05);
+
+}
+
+
+
+/* ==========================================================
+   SELO
+========================================================== */
+
+.selo {
+
+    position: absolute;
+
+    right: 29%;
+    top: 10px;
+
+    width: 67px;
+    height: 67px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(218, 180, 101, 0.55);
+
+    background: rgba(49, 29, 63, 0.90);
+
+    color: var(--dourado);
+
+    text-align: center;
+
+    transform: rotate(8deg);
+
+    z-index: 4;
+
+}
+
+
+.selo span {
+
+    font-size: 8px;
+
+    margin-bottom: 3px;
+
+}
+
+
+.selo strong {
+
+    font-size: 0.47rem;
+
+    line-height: 1.4;
+
+    letter-spacing: 1px;
+
+}
+
+
+
+/* ==========================================================
+   14. PERFIL
+========================================================== */
+
+.perfil {
+
+    text-align: center;
+
+    margin-top: 5px;
+
+}
+
+
+.rotulo-secao {
+
+    margin-bottom: 8px;
+
+    color: var(--dourado);
+
+    font-size: 0.56rem;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+}
+
+
+
+/* ==========================================================
+   REQUISITO:
+   NOME GRANDE E CENTRALIZADO
+========================================================== */
+
+.nome-proprietaria {
+
+    max-width: 500px;
+
+    margin: auto;
+
+    color: var(--branco);
+
+    font-family: var(--fonte-titulo);
+
+    font-size: clamp(2rem, 6vw, 2.7rem);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    text-align: center;
+
+}
+
+
+
+/* ==========================================================
+   DESCRIÇÃO
+========================================================== */
+
+.descricao {
+
+    max-width: 440px;
+
+    margin: 14px auto 0;
+
+    color: rgba(255, 255, 255, 0.57);
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 1rem;
+
+    line-height: 1.55;
+
+}
+
+
+
+/* ==========================================================
+   ESPECIALIDADE
+========================================================== */
+
+.especialidade {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 16px;
+
+    color: var(--lilas-claro);
+
+}
+
+
+.especialidade span {
+
+    color: var(--dourado);
+
+    font-size: 8px;
+
+}
+
+
+.especialidade p {
+
+    font-size: 0.68rem;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+
+/* ==========================================================
+   15. CONTATOS
+========================================================== */
+
+.area-contato {
+
+    margin-top: 32px;
+
+}
+
+
+.titulo-contato {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.titulo-contato span {
+
+    flex: 1;
+
+    height: 1px;
+
+    background: rgba(218, 180, 101, 0.20);
+
+}
+
+
+.titulo-contato p {
+
+    color: var(--dourado);
+
+    font-size: 0.52rem;
+
+    letter-spacing: 3px;
+
+}
+
+
+
+/* ==========================================================
+   ITEM DE CONTATO
+========================================================== */
+
+.contato {
+
+    min-height: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 10px 4px;
+
+    border-bottom: 1px solid rgba(218, 180, 101, 0.12);
+
+    color: white;
+
+    text-decoration: none;
+
+    transition:
+
+        background 0.25s ease,
+
+        padding 0.25s ease;
+
+}
+
+
+.contato:hover {
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+}
+
+
+
+/* ==========================================================
+   ÍCONES
+========================================================== */
+
+.icone {
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(218, 180, 101, 0.35);
+
+    color: var(--dourado);
+
+}
+
+
+.icone svg {
+
+    width: 19px;
+    height: 19px;
+
+}
+
+
+
+/* ==========================================================
+   DADOS
+========================================================== */
+
+.dados {
+
+    flex: 1;
+
+}
+
+
+.dados small {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--dourado);
+
+    font-size: 0.48rem;
+
+    letter-spacing: 3px;
+
+}
+
+
+.dados strong {
+
+    color: rgba(255, 255, 255, 0.80);
+
+    font-size: 0.76rem;
+
+    font-weight: 400;
+
+}
+
+
+
+/* ==========================================================
+   REQUISITO:
+   DIFERENTES VALORES DE TEXT-ALIGN
+========================================================== */
+
+
+/* E-mail alinhado à esquerda */
+
+.contato-email {
+
+    text-align: left;
+
+}
+
+
+/* Especialidade centralizada */
+
+.contato-centro {
+
+    text-align: center;
+
+}
+
+
+/* WhatsApp alinhado à direita */
+
+.contato-whatsapp {
+
+    text-align: right;
+
+}
+
+
+
+/* ==========================================================
+   16. BOTÃO DO WHATSAPP
+========================================================== */
+
+.botao-whatsapp {
+
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+
+    max-width: 470px;
+
+    min-height: 77px;
+
+    margin: 28px auto 0;
+
+    padding: 12px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    border-radius: 50px;
+
+    border: 1px solid rgba(230, 199, 124, 0.68);
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            hsl(270, 34%, 28%),
+            hsl(270, 36%, 18%)
+        );
+
+
+    color: white;
+
+    text-decoration: none;
+
+
+    box-shadow:
+
+        0 15px 35px rgba(0, 0, 0, 0.28),
+
+        inset 0 0 20px rgba(255, 255, 255, 0.025);
+
+
+    transition:
+
+        transform 0.3s ease,
+
+        box-shadow 0.3s ease,
+
+        border-color 0.3s ease;
+
+}
+
+
+
+/* Luz animada */
+
+.botao-whatsapp::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 50px;
+    height: 120px;
+
+    left: -100px;
+    top: -20px;
+
+    transform: rotate(25deg);
+
+    background: rgba(255, 255, 255, 0.10);
+
+    filter: blur(6px);
+
+    transition: left 0.7s ease;
+
+}
+
+
+.botao-whatsapp:hover::before {
+
+    left: 110%;
+
+}
+
+
+.botao-whatsapp:hover {
+
+    transform: translateY(-4px);
+
+    border-color: var(--dourado-claro);
+
+    box-shadow:
+
+        0 20px 42px rgba(0, 0, 0, 0.36),
+
+        0 0 20px rgba(218, 180, 101, 0.10);
+
+}
+
+
+
+/* ==========================================================
+   ÍCONE DO BOTÃO
+========================================================== */
+
+.icone-botao {
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            var(--dourado-claro),
+            #ad8134
+        );
+
+
+    color: var(--roxo-escuro);
+
+}
+
+
+.icone-botao svg {
+
+    width: 23px;
+    height: 23px;
+
+}
+
+
+
+/* ==========================================================
+   TEXTO DO BOTÃO
+========================================================== */
+
+.texto-botao {
+
+    flex: 1;
+
+}
+
+
+.texto-botao small {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--dourado);
+
+    font-size: 0.46rem;
+
+    letter-spacing: 2px;
+
+}
+
+
+.texto-botao strong {
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 1.15rem;
+
+    font-weight: 600;
+
+}
+
+
+
+/* ==========================================================
+   SETA
+========================================================== */
+
+.seta {
+
+    color: var(--dourado);
+
+    font-size: 1.5rem;
+
+    transition: transform 0.3s ease;
+
+}
+
+
+.botao-whatsapp:hover .seta {
+
+    transform: translateX(5px);
+
+}
+
+
+
+/* ==========================================================
+   17. RODAPÉ
+========================================================== */
+
+footer {
+
+    margin-top: 31px;
+
+    text-align: center;
+
+}
+
+
+.linha-rodape {
+
+    width: 60px;
+    height: 1px;
+
+    margin: 0 auto 17px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--dourado),
+            transparent
+        );
+
+}
+
+
+footer p {
+
+    color: rgba(255, 255, 255, 0.32);
+
+    font-size: 0.48rem;
+
+    letter-spacing: 2px;
+
+}
+
+
+footer p span {
+
+    margin: 0 6px;
+
+    color: var(--dourado);
+
+}
+
+
+footer strong {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: rgba(218, 180, 101, 0.65);
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 0.65rem;
+
+    font-weight: 500;
+
+    letter-spacing: 3px;
+
+}
+
+
+
+/* ==========================================================
+   18. ACESSIBILIDADE
+========================================================== */
+
+a:focus-visible {
+
+    outline: 3px solid var(--lilas);
+
+    outline-offset: 4px;
+
+}
+
+
+
+/* ==========================================================
+   19. RESPONSIVIDADE
+========================================================== */
+
+@media (max-width: 600px) {
+
+
+    body {
+
+        padding: 22px 12px;
+
+    }
+
+
+    .cartao {
+
+        padding:
+            45px
+            28px
+            27px;
+
+        border-radius: 29px;
+
+    }
+
+
+    .nome-marca {
+
+        font-size: 4.3rem;
+
+    }
+
+
+    .subtitulo-marca {
+
+        font-size: 1.5rem;
+
+    }
+
+
+    /* Galeria */
+
+    .galeria {
+
+        height: 245px;
+
+    }
+
+
+    .foto-principal {
+
+        width: 190px;
+        height: 190px;
+
+        left: 5%;
+
+    }
+
+
+    .foto-secundaria {
+
+        width: 145px;
+        height: 145px;
+
+        right: 3%;
+
+    }
+
+
+    .selo {
+
+        width: 58px;
+        height: 58px;
+
+        right: 26%;
+
+    }
+
+
+}
+
+
+
+/* ==========================================================
+   20. CELULARES PEQUENOS
+========================================================== */
+
+@media (max-width: 420px) {
+
+
+    .cartao {
+
+        padding:
+            40px
+            20px
+            25px;
+
+    }
+
+
+    .sobretitulo {
+
+        font-size: 0.48rem;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .nome-marca {
+
+        font-size: 3.7rem;
+
+    }
+
+
+    .galeria {
+
+        height: 205px;
+
+    }
+
+
+    .foto-principal {
+
+        width: 155px;
+        height: 155px;
+
+        left: 2%;
+
+    }
+
+
+    .foto-secundaria {
+
+        width: 120px;
+        height: 120px;
+
+        right: 1%;
+
+        bottom: 13px;
+
+    }
+
+
+    .selo {
+
+        width: 50px;
+        height: 50px;
+
+        top: 5px;
+        right: 25%;
+
+    }
+
+
+    .selo strong {
+
+        font-size: 0.39rem;
+
+    }
+
+
+    .nome-proprietaria {
+
+        font-size: 1.85rem;
+
+    }
+
+
+    .dados strong {
+
+        font-size: 0.68rem;
+
+        overflow-wrap: anywhere;
+
+    }
+
+
+    .botao-whatsapp {
+
+        gap: 10px;
+
+        padding: 11px 13px;
+
+    }
+
+
+    .icone-botao {
+
+        width: 42px;
+        height: 42px;
+
+    }
+
+
+    .texto-botao strong {
+
+        font-size: 0.95rem;
+
+    }
+
+
+    .texto-botao small {
+
+        font-size: 0.38rem;
+
+        letter-spacing: 1px;
+
+    }
+
+
+    .seta {
+
+        display: none;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   21. REDUÇÃO DE MOVIMENTO
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+
+    }
+
+}
+
